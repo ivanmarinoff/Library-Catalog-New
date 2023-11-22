@@ -45,7 +45,7 @@ jobs:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID_BE }}
           api-key: ${{ secrets.MY_RENDER_API_KEY_NEW }}
       - name: Wait deployment
-        run: sleep 1800
+        run: sleep 120
   deploy-fe:
     needs: deploy-be
     runs-on: ubuntu-latest
