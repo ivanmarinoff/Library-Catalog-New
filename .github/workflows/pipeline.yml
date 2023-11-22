@@ -10,8 +10,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,3 +34,13 @@ jobs:
       run: sleep 10
     - name: Run tests
       run: npm run test
+
+  deploy-be:
+    needs: build-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy backend to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.MY_RENDER_SERVICE_ID_BE }}
+          api-key: ${{ secrets.MY_RENDER_API_KEY }}
