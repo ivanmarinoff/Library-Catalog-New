@@ -23,5 +23,5 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm install
-    - name: Start frontend
+    - name: Start Tests
       run: npm run start
