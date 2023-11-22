@@ -32,8 +32,6 @@ jobs:
       run: npm run start-fe &
     - name: Wait for services to start
       run: sleep 10
-    - name: Set environment variable
-      run: echo "HOST=http://localhost:3030" >> $GITHUB_ENV
     - name: Run tests
       run: npm run test
 

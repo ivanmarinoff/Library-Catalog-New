@@ -1,5 +1,5 @@
 export const settings = {
-    host: process.env.HOST || 'https://be-new.onrender.com',
+    host: 'http://localhost:3030',
 };
 
 async function request(url, options) {
